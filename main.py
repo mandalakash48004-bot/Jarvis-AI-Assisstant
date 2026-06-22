@@ -14,7 +14,7 @@ import google.generativeai as genai
 
 recognizer=sr.Recognizer()  ## variable that represents recognizer package.
 engine=pyttsx3.init() ##variable that represents pyttsx3 package.
-newsapi="9c0ccc6e072e4d38b10e4042ff6af0f0"
+newsapi="Use your newsapi key here"  ## variable that represents newsapi key.
 
 def speak(text):
     engine.say(text)
@@ -46,7 +46,7 @@ def speak_old(text):  ### it is a better version of the free microsoft voice mod
 
 def aiprocess(command):
     # Configure API key
-    genai.configure(api_key="AIzaSyCszAlew_e3S5SEtr7Se-pGctxuYg0RuO4")
+    genai.configure(api_key="Use you api key here")  # Replace with your actual API key
 
 # Load model
     model = genai.GenerativeModel("models/gemini-2.5-flash")
@@ -79,7 +79,7 @@ def processCommand(c):
     ######this is the code to get news from newsapi through my api key
     elif "news" in lowered:
         r = requests.get(
-            "https://newsapi.org/v2/top-headlines?country=us&apiKey=9c0ccc6e072e4d38b10e4042ff6af0f0"
+            "https://newsapi.org/v2/top-headlines?country=us&apiKey=(YOUR_NEWSAPI_KEY)"
         )
         if r.status_code == 200:
             data = r.json()
